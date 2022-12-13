@@ -25,6 +25,9 @@ class MyHomeViewModel extends ChangeNotifier {
     /// 関数内の処理を非同期処理で実行。
     /// await：非同期処理関数の呼び出し前に宣言(await repository?.incrementCounter();)。
     /// 非同期処理が終わるまで待機する。
+    /// その他の非同期処理の実装方法としてStreamというものもある。下記URL参照
+    /// https://zenn.dev/t-fukuyama/articles/b9bdbe61c37b44
+    /// https://blog.flutteruniv.com/flutter-future-stream-difference/
     repository?.incrementCounter().then((resultModel) {
       _counter = resultModel.counter;
 
