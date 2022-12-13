@@ -6,6 +6,7 @@ import 'package:sample/model/ResultModel.dart';
 /// があるため、readで読み取る
 /// DDD(ドメイン駆動設計)、リポジトリパターンについては下記URLが分かりやすい
 /// https://zenn.dev/kohii/articles/e4f325ed011db8
+/// https://zenn.dev/chooyan/articles/eefc76dbd2ba25
 final myHomeRepositoryProvider = Provider(
     (ref) => MyHomeRepositoryImpl(model: ref.read(resultModelProvider)));
 
