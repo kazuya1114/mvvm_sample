@@ -4,6 +4,8 @@ import 'package:sample/model/ResultModel.dart';
 /// read：値の更新
 /// incrementCounter関数で監視対象のResultModelの値(counter)が更新される可能性
 /// があるため、readで読み取る
+/// DDD(ドメイン駆動設計)、リポジトリパターンについては下記URLが分かりやすい
+/// https://zenn.dev/kohii/articles/e4f325ed011db8
 final myHomeRepositoryProvider = Provider(
     (ref) => MyHomeRepositoryImpl(model: ref.read(resultModelProvider)));
 
