@@ -19,7 +19,9 @@ class MyHomeViewModel extends ChangeNotifier {
   }
 
   void incrementCounter() {
-    // repositoryがnull以外の場合、_counterにモデルクラスで保持している値を代入
+    /// repositoryがnull以外の場合、_counterにモデルクラスで保持している値を代入
+    /// then：Futureクラスの関数で、呼び出し先のFuture型関数の実行が終わる前にthenで指定した処理を実行する(非同期処理のため、処理は同時進行)
+    /// incrementCounterがFuture型、そしてthen関数が使用されているため、_counterにresultModelのcounterの値を代入してからincrementCounterを実行
     repository?.incrementCounter().then((resultModel) {
       _counter = resultModel.counter;
 
