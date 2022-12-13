@@ -19,7 +19,7 @@ class MyHomeRepositoryImpl implements MyHomeRepository {
 
   MyHomeRepositoryImpl({required ResultModel model}) : _model = model;
 
-  /// Future：非同期処理を表す
+  /// Future：関数内に非同期処理がある場合に仕様。<>の中は最終的な返却型
   /// 処理１～３があり、処理２の時間が長い場合の処理２の返却型をFutureにすれば、
   /// 処理２を実行しながら処理３を実行できる、といった非同期処理を実装する際に使用
   /// 本関数は、非同期処理の返却型はResultModel
