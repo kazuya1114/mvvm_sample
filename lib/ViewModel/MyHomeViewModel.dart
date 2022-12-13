@@ -20,8 +20,11 @@ class MyHomeViewModel extends ChangeNotifier {
 
   void incrementCounter() {
     /// repositoryがnull以外の場合、_counterにモデルクラスで保持している値を代入
-    /// then：Futureクラスの関数で、呼び出し先のFuture型関数の実行が終わる前にthenで指定した処理を実行する(非同期処理のため、処理は同時進行)
-    /// incrementCounterがFuture型、そしてthen関数が使用されているため、_counterにresultModelのcounterの値を代入してからincrementCounterを実行
+    /// then：Futureクラスの関数で、呼び出し先のFuture型関数の実行が終わるとthenで指定した処理を実行する
+    /// async：非同期処理関数の関数名(引数)の後に宣言(void incrementCounter() async {...})。
+    /// 関数内の処理を非同期処理で実行。
+    /// await：非同期処理関数の呼び出し前に宣言(await repository?.incrementCounter();)。
+    /// 非同期処理が終わるまで待機する。
     repository?.incrementCounter().then((resultModel) {
       _counter = resultModel.counter;
 
