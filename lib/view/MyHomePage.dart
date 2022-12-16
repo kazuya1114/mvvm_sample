@@ -14,7 +14,7 @@ class MyHomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     /// read：値の更新
     /// watchでも値の更新は可能だが、onPressed等のプロパティで使用する場合はread推奨
-    final _viewModel = ref.read(myHomeViewModelProvider);
+    final _viewModel = ref.(myHomeViewModelProvider);
 
     return Scaffold(
       appBar: AppBar(
